@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Administración de Pacientes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <style>
+      html {
+        min-height: 100%;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+        min-height: 100%;
+        padding-bottom: 5rem;
+      }
+
+      h1,
+      h2 {
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+
+        text-transform: uppercase;
+
+        font-family: 'Staatliches', cursive;
+        letter-spacing: 1px;
+      }
+
+      .lista-citas .media {
+        border-bottom: 1px solid #e1e1e1;
+        padding-bottom: 3rem;
+      }
+
+      .lista-citas .media:last-of-type {
+        border-bottom: 0;
+      }
+
+      .lista-citas .media-body p {
+        margin: 0;
+      }
+
+      .lista-citas .media-body button {
+        margin-top: 1rem !important;
+      }
+
+      .lista-citas .media-body span {
+        font-weight: bold;
+      }
+
+      label {
+        color: white;
+      }
+
+      input[type="date"],
+      input[type="time"] {
+        height: 38px;
+        padding: 6px 10px;
+        background-color: #fff;
+        border: 1px solid #D1D1D1;
+        border-radius: 4px;
+        box-shadow: none;
+        box-sizing: border-box;
+      }
+
+      .cita {
+        padding: 2rem;
+        background: white;
+        border-bottom: 1px solid #e1e1e1;
+        color: black;
+        margin-bottom: 20px;
+      }
+
+      .cita p {
+        font-weight: bold;
+        margin-bottom: .8rem;
+      }
+
+      .cita p span {
+        font-weight: normal;
+
+      }
+
+      .cita:first-of-type {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+      }
+
+      .cita:last-of-type {
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+      }
+
+      .button.eliminar,
+      .button.eliminar:hover {
+        background-color: #c10059;
+        color: white;
+        margin-top: 2rem;
+      }
+
+      .alerta-error {
+        background-color: white;
+        color: red;
+        padding: 1rem;
+        font-size: 2rem;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: 'Staatliches', cursive;
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <h1>ADMINISTRADOR DE PACIENTES</h1>
+      <div class="container">
+        <div class="row">
+          <div class="one-half column">
+            <h2>Crear mi Cita</h2>
+            <form><label>Nombre Mascota</label><input type="text" name="mascota" class="u-full-width" placeholder="Nombre Mascota"
+                     value=""><label>Nombre Dueño</label><input type="text" name="propietario" class="u-full-width"
+                     placeholder="Nombre dueño de la mascota" value=""><label>Fecha</label><input type="date" name="fecha"
+                     class="u-full-width" value=""><label>hora</label><input type="time" name="hora" class="u-full-width"
+                     value=""><label>Sintomas</label><textarea name="sintomas" class="u-full-width"></textarea><button type="submit"
+                      class="u-full-width button-primary">Agregar Cita</button></form>
+          </div>
+          <div class="one-half column">
+            <h2>Administra tus citas</h2>
+            <div class="cita">
+              <p>Mascota: <span>Nina</span></p>
+              <p>Dueño: <span>Martin</span></p>
+              <p>Fecha: <span>2021-08-05</span></p>
+              <p>Hora: <span>08:20</span></p>
+              <p>Sintomas: <span>Le duele la pierna</span></p><button class="button elimnar u-full-width">Eliminar ×</button>
+            </div>
+            <div class="cita">
+              <p>Mascota: <span>Sifon</span></p>
+              <p>Dueño: <span>Flecha</span></p>
+              <p>Fecha: <span>2023-08-05</span></p>
+              <p>Hora: <span>09:24</span></p>
+              <p>Sintomas: <span>Duerme mucho</span></p><button class="button elimnar u-full-width">Eliminar ×</button>
+            </div>
+            <div class="cita">
+              <p>Mascota: <span>Floki</span></p>
+              <p>Dueño: <span>Ari</span></p>
+              <p>Fecha: <span>2023-08-05</span></p>
+              <p>Hora: <span>16:15</span></p>
+              <p>Sintomas: <span>No está comiendo</span></p><button class="button elimnar u-full-width">Eliminar ×</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/static/js/bundle.js"></script>
+    <script src="/static/js/vendors~main.chunk.js"></script>
+    <script src="/static/js/main.chunk.js"></script>
+
+  </body>
+
+</html>
