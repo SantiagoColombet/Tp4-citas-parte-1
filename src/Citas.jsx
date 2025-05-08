@@ -1,4 +1,7 @@
 import React from 'react'
+import './Citas.css';
+import BorrarCita from './BorrarCita';
+
 
 function Citas({citas}) {
     return (
@@ -10,9 +13,7 @@ function Citas({citas}) {
               <p>Fecha: <span>{cita.fecha}</span></p>
               <p>Hora: <span>{cita.hora}</span></p>
               <p>Síntomas: <span>{cita.sintomas}</span></p>
-              <button className="button eliminar u-full-width">
-                Eliminar x
-              </button>
+              <BorrarCita />
             </div>
           ))}
         </>

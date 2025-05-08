@@ -1,6 +1,7 @@
 import React from 'react'
 import Citas from './MostrarCitas'
 import Formulario from './Formulario'
+import './Container.css'
 
 
 function Container() {

@@ -1,8 +1,11 @@
 import React from 'react'
+import './BorrarCita.css';
 
 function BorrarCita() {
   return (
-    <div>BorrarCita</div>
+    <button className="button eliminar u-full-width">
+        Eliminar x
+    </button>
   )
 }
 
