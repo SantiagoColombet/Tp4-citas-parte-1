@@ -1,17 +1,13 @@
 import React from 'react';
-import BotonNuevaCita from './BotonNuevaCita';
 import Citas from './Citas';
 import InputCita from './InputCita';
 
-function CrearCita() {
+function CrearCita({setContador, contador, listaCitas, setListaCitas}) {
 
     
   return (
     <>
-    <form>
-        <InputCita />
-        <BotonNuevaCita />
-    </form>
+      <InputCita setContador = {setContador} contador = {contador} listaCitas = {listaCitas} setListaCitas = {setListaCitas}/>
     </>
   );
 }
