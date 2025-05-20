@@ -13,7 +13,7 @@ function Citas({listaCitas, setListaCitas}) {
             <p>Fecha: <span>{listaCitas.fecha}</span></p>
             <p>Hora: <span>{listaCitas.hora}</span></p>
             <p>Síntomas: <span>{listaCitas.sintomas}</span></p>
-            <BorrarCita id = {listaCitas.id} setListaCitas = {setListaCitas}/>
+            <BorrarCita id = {listaCitas.id} setListaCitas = {setListaCitas} listaCitas={listaCitas}/>
           </div>
           ))}
         </>

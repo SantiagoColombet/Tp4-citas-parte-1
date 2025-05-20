@@ -29,7 +29,9 @@ const enviarForm = (e) =>{
     return;
   }
   setContador(contador +1)
-  setListaCitas((prev) => [...prev, cita])
+  let nuevaCita = cita
+  nuevaCita.id = contador
+  setListaCitas((listaCitas) => [...listaCitas, nuevaCita])
   setCita( {mascota: "",
             propietario: "",
             fecha: "",
