@@ -1,19 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Citas from "./MostrarCitas";
 import Formulario from "./Formulario";
-import { useState } from "react";
 import "./Container.css";
 
 function Container() {
+  const [listaCitas, setListaCitas] = useState([]);
   const [contador, setContador] = useState(0);
-  const [listaCitas, setListaCitas] = useState(() => {
-    const citasGuardadas = localStorage.getItem('listaCitas')
-    return citasGuardadas != null ? JSON.parse(localStorage.getItem("listaCitas")) : []
-  });
+  const [cargado, setCargado] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('listaCitas', JSON.stringify(listaCitas))
-  }, [listaCitas]);
+    const citasGuardadas  = localStorage.getItem("listaCitas");
+    const contadorGuardado = localStorage.getItem("contador");
+    if (citasGuardadas) {
+      setListaCitas(JSON.parse(citasGuardadas));
+    }
+    if (contadorGuardado) {
+      setContador(JSON.parse(contadorGuardado));
+    }
+    setCargado(true);
+  }, []);
+  useEffect(() => {
+    if (cargado){
+      localStorage.setItem("listaCitas", JSON.stringify(listaCitas));
+      localStorage.setItem("contador", JSON.stringify(contador));
+    }  
+  }, [listaCitas, contador, cargado]);
 
   return (
     <>

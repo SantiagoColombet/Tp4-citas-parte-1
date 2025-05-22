@@ -1,13 +1,10 @@
 import React from 'react'
 import './BorrarCita.css';
 
-function BorrarCita({id, setListaCitas, listaCitas}) 
+function BorrarCita({id, setListaCitas}) 
 {
   const borrar = () => {
-    setListaCitas((listaCitas) => listaCitas.filter(cita => cita.id !== id));
-
-      localStorage.setItem("listaCitas", JSON.stringify(listaCitas)) 
-    
+    setListaCitas((listaCitas) => listaCitas.filter(cita => cita.id !== id));    
   }
   return (
     <button className="button eliminar u-full-width" onClick={borrar}>

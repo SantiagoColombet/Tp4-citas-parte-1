@@ -28,10 +28,12 @@ const enviarForm = (e) =>{
     alert('Por favor completá todos los campos.');
     return;
   }
-  setContador(contador +1)
-  let nuevaCita = cita
-  nuevaCita.id = contador
-  setListaCitas((listaCitas) => [...listaCitas, nuevaCita])
+  const nuevaCita = {
+    ...cita,
+    id: contador,
+  };
+  setListaCitas((lista) => [...lista, nuevaCita]);
+  setContador(contador + 1);
   setCita( {mascota: "",
             propietario: "",
             fecha: "",
